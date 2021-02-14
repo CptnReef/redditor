@@ -1,0 +1,34 @@
+<div class="row ml-2 pl-4 text-primary">
+  <h5 class="p-3">Reddit.js</h5>
+  <h5 class="p-3">New Post</h5><br>
+</div>
+<div class="ml-1 p-3 row">
+  <h1>Reddit.js</h1><br>
+</div>
+<div class="ml-2 pl-4 text-primary row">
+  <h6 class="p-3">Reddit.js</h6>
+  <h6 class="p-3">New Post</h6>
+  <br>
+</div>
+<div class="ml-1 row">
+  <div class="col-sm-4 col-sm-offset-4">
+    <form action="/posts/new" method="post">
+      <legend>New Post</legend>
+      <div class="form-group">
+        <label for="post-title">Title</label>
+        <input type="text" name="title" class="form-control" id="post-title" placeholder="Title">
+      </div>
+      <div class="form-group">
+        <label for="post-url">Url</label>
+        <input type="url" name="url" class="form-control" id="post-url" placeholder="https://www.google.com">
+      </div>
+      <div class="form-group">
+        <label for="post-summary">Summary</label>
+        <textarea name="summary" class="form-control" id="post-summary" placeholder="Summary" ></textarea>
+      </div>
+      <div class='text-right'>
+        <button type="submit" class="btn btn-primary">Create Post</button>
+      </div>
+    </form>
+  </div>
+</div>
