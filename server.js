@@ -33,3 +33,5 @@ app.get('/posts/new', (req, res) => {
 app.listen(port, function () {
 	console.log(`express-handlebars example server listening on: ${port}`);
 });
+
+module.exports = app;
