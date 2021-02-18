@@ -1,15 +1,3 @@
-<div class="row ml-2 pl-4 text-primary">
-  <h5 class="p-3">Reddit.js</h5>
-  <h5 class="p-3">New Post</h5><br>
-</div>
-<div class="ml-1 p-3 row">
-  <h1>Reddit.js</h1><br>
-</div>
-<div class="ml-2 pl-4 text-primary row">
-  <h6 class="p-3">Reddit.js</h6>
-  <h6 class="p-3">New Post</h6>
-  <br>
-</div>
 <div class="ml-1 row">
   <div class="col-sm-4 col-sm-offset-4">
     <form action="/posts/new" method="post">
@@ -17,6 +5,10 @@
       <div class="form-group">
         <label for="post-title">Title</label>
         <input type="text" name="title" class="form-control" id="post-title" placeholder="Title">
+      </div>
+      <div class="form-group">
+        <label for="post-subreddit">Subreddit</label>
+        <input name="subreddit" type="text" class="form-control" id="post-subreddit" placeholder="Subreddit">
       </div>
       <div class="form-group">
         <label for="post-url">Url</label>
