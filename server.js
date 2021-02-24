@@ -11,6 +11,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 // Routes =======================================================================
 require('./controllers/posts.js')(app);
+require('./controllers/comments.js')(app);
 
 // Database Setup ===============================================================
 require('./data/reddit-db.js');

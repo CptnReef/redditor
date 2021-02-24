@@ -1,0 +1,24 @@
+<div class="row ml-5 pl-4 text-primary">
+  <a href="/"><h5 class="p-3">Reddit.js</h5></a>
+  <a href="/posts/new"><h5 class="p-3">New Post</h5></a><br>
+</div>
+
+<div class="row justify-content-center">
+  <div class="col-sm-6 col-sm-offset-3">
+    <a href="{{post.url}}" class="lead">{{post.title}}</a>
+    <p>{{post.summary}}</p>
+  </div>
+</div>
+
+<form class="m-2 ml-5 pl-4" action="/posts/{{post._id}}/comments" method="post">
+    <textarea class='form-control' name="content" placeholder="Comment" rows="3" cols="50"></textarea>
+    <div class="text-right">
+      <button type="submit" class="btn btn-primary">Save</button>
+    </div>
+</form>
+
+<div class="m-2 ml-5 pl-4">
+  {{#each post.comments}}
+    <p>{{this.content}}</p>
+  {{/each}}
+</div>
