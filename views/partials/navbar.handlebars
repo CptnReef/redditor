@@ -1,9 +1,13 @@
 <nav class="navbar navbar-default">
   <div class="container-fluid">
-    <ul class="row nav navbar-nav navbar-right">
-      <li><a href="/logout">Logout</a></li>
+    <ul class="nav navbar-nav navbar-right">
+    {{#if currentUser}}
+    <a href="/posts/new" class="btn btn-primary navbar-btn">New Post</a>
+    <li><a href="/logout">Logout</a></li>
+    {{else}}
       <li><a href="/login">Login</a></li>
       <li><a href="/sign-up">Sign Up</a></li>
+    {{/if}}
     </ul>
   </div>
 </div>

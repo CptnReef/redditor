@@ -9,10 +9,27 @@ const cookieParser = require('cookie-parser');
 const jwt = require('jsonwebtoken');
 
 
-// Use Body Parser
+// Cookie Parser ================================================================
+app.use(cookieParser()); // Add this after you initialize express.
+
+// Use Body Parser ==============================================================
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
-app.use(cookieParser()); // Add this after you initialize express.
+
+var checkAuth = (req, res, next) => {
+	console.log("Checking authentication");
+	if (typeof req.cookies.nToken === "undefined" || req.cookies.nToken === null) {
+	  req.user = null;
+	} else {
+	  var token = req.cookies.nToken;
+	  var decodedToken = jwt.decode(token, { complete: true }) || {};
+	  req.user = decodedToken.payload;
+	}
+  
+	next();
+};
+
+app.use(checkAuth);
 
 // Routes =======================================================================
 require('./controllers/posts.js')(app);
