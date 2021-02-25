@@ -1,9 +1,11 @@
-<div class="row ml-5 pl-4 text-primary">
+<div class="row ml-2 p-2 text-primary">
   <a href="/"><h5 class="p-3">Reddit.js</h5></a>
   <a href="/posts/new"><h5 class="p-3">New Post</h5></a><br>
 </div>
+  {{> navbar }}
+</div><br>
 
-<div class="row justify-content-center">
+<div class="ml-5 justify-content-right">
   <div class="col-sm-6 col-sm-offset-3">
     <a href="{{post.url}}" class="lead">{{post.title}}</a>
     <p>{{post.summary}}</p>
@@ -11,7 +13,7 @@
 </div>
 
 <form class="m-2 ml-5 pl-4" action="/posts/{{post._id}}/comments" method="post">
-    <textarea class='form-control' name="content" placeholder="Comment" rows="3" cols="50"></textarea>
+    <textarea class='form-control' name="content" placeholder="Comment" rows="3" cols="25"></textarea>
     <div class="text-right">
       <button type="submit" class="btn btn-primary">Save</button>
     </div>

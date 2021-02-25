@@ -1,0 +1,19 @@
+<div class="row ml-2 p-2 text-primary">
+  <a href="/"><h5 class="p-3">Reddit.js</h5></a>
+  <a href="/posts/new"><h5 class="p-3">New Post</h5></a><br>
+</div>
+  {{> navbar }}
+
+<form method="POST" class="mb-5">
+    <div class="form-group">
+        <label for="username">Username</label>
+        <input type="text" class="form-control" name="username" id="username" aria-describedby="usernameHelp"
+            placeholder="Enter Username">
+        <small id="usernameHelp" class="form-text text-muted">Mike Check</small>
+    </div>
+    <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" class="form-control" name="password" id="password" placeholder="Password">
+    </div>
+    <button type="submit" class="btn btn-primary">Join Now!</button>
+</form>
