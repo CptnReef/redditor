@@ -6,7 +6,9 @@ const UserSchema = new Schema({
   createdAt: { type: Date },
   updatedAt: { type: Date },
   password: { type: String, select: false },
-  username: { type: String, required: true }
+  username: { type: String, required: true },
+  comments: [{ type: Schema.Types.ObjectId, ref: "Comments" }],
+  posts : [{ type: Schema.Types.ObjectId, ref: "Post" }]
 }, {timestamps: {createdAt: 'created_at'}}
 );
 

@@ -21,6 +21,6 @@
 
 <div class="m-2 ml-5 pl-4">
   {{#each post.comments}}
-    <p>{{this.content}}</p>
+    {{> comment comment=this postId=../post._id}}
   {{/each}}
 </div>

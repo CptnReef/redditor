@@ -1,1 +1,2 @@
 SECRET=somehashvalue
+PORT=3000

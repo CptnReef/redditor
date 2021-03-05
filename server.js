@@ -9,6 +9,9 @@ const cookieParser = require('cookie-parser');
 const jwt = require('jsonwebtoken');
 
 
+// Style Sheets & etc. ==========================================================
+app.use(express.static('public'));
+
 // Cookie Parser ================================================================
 app.use(cookieParser()); // Add this after you initialize express.
 
@@ -35,6 +38,7 @@ app.use(checkAuth);
 require('./controllers/posts.js')(app);
 require('./controllers/comments.js')(app);
 require('./controllers/auth.js')(app);
+require('./controllers/replies.js')(app);
 
 // Database Setup ===============================================================
 require('./data/reddit-db.js');
@@ -45,8 +49,15 @@ app.use(expressValidator());
 app.engine('handlebars', exphbs());
 app.set('view engine', 'handlebars');
 
+// Start Server
+
+if (require.main === module) {
+    app.listen(process.env.PORT, () => {
+        console.log(`Listening at http://localhost:${process.env.PORT}`)
+    });
+}
 app.listen(port, function () {
 	console.log(`express-handlebars example server listening on: ${port}`);
-});
+});	
 
 module.exports = app;
